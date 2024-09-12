@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="text-center p-4 bg-primary text-white">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo-container">
+                <img src="logo.png" alt="Website Logo" class="logo">
+                <button id="toggle-lang" class="btn btn-link">DE/EN</button>
+                <button id="toggle-temp" class="btn btn-link">°C/°F</button>
+            </div>
+            <h1>Weather Forecast</h1>
+            <nav>
+                <a href="index.html">Home</a> |
+                <a href="about.html">About Us</a> |
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container mt-4">
+        <div class="search-bar mb-4">
+            <input type="text" id="city-search" class="form-control" placeholder="Enter city name">
+            <button id="search-btn" class="btn btn-primary mt-2">Search</button>
+        </div>
+        <div id="weather-container" class="weather-container d-flex justify-content-center align-items-center">
+            <div class="weather-left text-center">
+                <h2 id="city" class="city-name">City Name</h2>
+                <img id="weather-icon" src="icons/default.png" alt="Weather Icon" class="weather-icon">
+                <div class="temp-container">
+                    <span id="temperature" class="temperature">--°C</span>
+                    <span id="real-feel" class="real-feel">RealFeel® --°C</span>
+                </div>
+            </div>
+            <div class="weather-right text-left ml-4">
+                <p class="weather-detail" id="condition">Condition: --</p>
+                <p class="weather-detail" id="wind-speed">Wind: -- m/s</p>
+                <p class="weather-detail" id="wind-gust">Wind Gusts: -- m/s</p>
+                <p class="weather-detail" id="humidity">Humidity: --%</p>
+                <p class="weather-detail" id="air-quality">Air Quality: --</p>
+            </div>
+        </div>
+        <div id="forecast-container" class="mt-4">
+            <h3>7-Day Forecast</h3>
+            <ul class="nav nav-tabs" id="forecastTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="temperature-tab" data-toggle="tab" href="#temperature" role="tab" aria-controls="temperature" aria-selected="true">Temperature</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="precipitation-tab" data-toggle="tab" href="#precipitation" role="tab" aria-controls="precipitation" aria-selected="false">Precipitation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="wind-tab" data-toggle="tab" href="#wind" role="tab" aria-controls="wind" aria-selected="false">Wind</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="forecastTabsContent">
+                <div class="tab-pane fade show active" id="temperature" role="tabpanel" aria-labelledby="temperature-tab">
+                    <div id="forecast-details-temperature" class="forecast-details"></div>
+                    <canvas id="forecast-chart-temperature"></canvas>
+                </div>
+                <div class="tab-pane fade" id="precipitation" role="tabpanel" aria-labelledby="precipitation-tab">
+                    <div id="forecast-details-precipitation" class="forecast-details"></div>
+                    <canvas id="forecast-chart-precipitation"></canvas>
+                </div>
+                <div class="tab-pane fade" id="wind" role="tabpanel" aria-labelledby="wind-tab">
+                    <div id="forecast-details-wind" class="forecast-details"></div>
+                    <canvas id="forecast-chart-wind"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
