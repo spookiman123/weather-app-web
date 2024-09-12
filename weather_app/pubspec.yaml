@@ -1,0 +1,46 @@
+name: weather_app
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.3
+  geolocator: ^8.0.0
+  provider: ^5.0.0
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.9.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/launch_logo.png"
+
+flutter:
+  uses-material-design: true
+
+
+  assets:
+    - assets/opening_animation.gif
+    - assets/new_logo.png
+    - assets/launch_logo.png
+    - assets/sunny.png
+    - assets/cloudy.png
+    - assets/rainy.png
+    - assets/snowy.png
+    - assets/thunderstorm.png
+    - assets/clear.png
+    - assets/location.png
+
